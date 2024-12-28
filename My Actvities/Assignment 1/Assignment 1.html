@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Form</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: rgb(162, 162, 162);
+            margin: 10;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: lightblue;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #000000;
+            margin-bottom: 15px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .inputs {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .inputs[type="file"] {
+            padding: 5px;
+            background-color: #fff;
+        }
+        select.inputs {
+            height: 45px;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .form-group > div {
+            flex: 1;
+        }
+        hr {
+            border: 0;
+            border-top: 2px solid #ddd;
+            margin: 20px 0;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: green;
+            transform: scale(1.05);
+        }
+        #formclear {
+            background-color: Red;
+        }
+        #formclear:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Biodata Form</h1>
+        <form action="submitform.php" method="post" enctype="multipart/form-data">
+            
+            <h3>Personal Information</h3>
+            <input class="inputs" type="text" id="fullname" name="fullname" placeholder=" Full Name" required>
+            <input class="inputs" type="text" id="desiredjob" name="desiredjob" placeholder=" Desired job" required>
+            
+            <div class="form-group">
+                <input class="inputs" type="number" id="age" name="age" placeholder=" Age" required>
+                <input class="inputs" type="date" id="dateofbirth" name=" dateofbirth" required>
+            </div>
+
+            <input class="inputs" type="text" id="presentaddress" name="presentaddress" placeholder=" Current Address" required>
+            <input class="inputs" type="text" id="permanentaddress" name="permanentaddress" placeholder=" Permanent Address" required>
+            
+            <select class="inputs" id="gender" name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <input class="inputs" type="tel" id="contact" name="contact" placeholder=" Contact Number" required>
+            <input class="inputs" type="email" id="email" name="email" placeholder=" Email Address" required>
+            
+            <label for="idpicture">Submit Photo ID</label>
+            <input class="inputs" type="file" id="idpicture" name=" idpicture" accept="image/*" required>
+
+            <hr>
+            <h3>Additional Information</h3>
+
+            <input class="inputs" id="placeofbirth" name="placeofbirth" placeholder=" Place of Birth" required>
+            <input class="inputs" id="citizenship" name="citizenship" placeholder=" Citizenship" required>
+            <input class="inputs" id="language" name="languages" placeholder=" Language" required>
+            
+            <select class="inputs" id="civilstatus" name=" Civilstatus" required>
+                <option value="" disabled selected>Select Civil Status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+            </select>
+
+            <hr>
+          
+            <h3>Family Information</h3>
+            <input class="inputs" id="fathername" name="fathername" placeholder=" Father's Name" required>
+            <input class="inputs" id="fatheroccupation" name="fatheroccupation" placeholder=" Father's Occupation" required>
+            <input class="inputs" id="mothername" name="mothername" placeholder=" Mother's Name" required>
+            <input class="inputs" id="motheroccupation" name="motheroccupation" placeholder=" Mother's Occupation" required>
+
+            <hr>
+
+            <h3>Emergency Contact Info</h3>
+            <input class="inputs" id="personemergency" name="personemergency" placeholder=" Contact Name" required>
+            <input class="inputs" id="guardianphone" name="guardianphone" placeholder=" Contact Phone Number" required>
+            <input class="inputs" id="guardianaddress" name="guardianaddress" placeholder=" Contact Address" required>
+
+            <hr>
+           
+            <h3>Educational Background</h3>
+            <input class="inputs" id="elementary" name="elementary" placeholder=" Elementary School" required>
+            <input class="inputs" id="highschool" name="highschool" placeholder=" High School" required>
+            <input class="inputs" id="college" name="college" placeholder=" College" required>
+            <input class="inputs" id="postcollege" name="postcollege" placeholder=" Post College Education" required>
+
+            <hr>
+            <div style="text-align: center;">
+                <button id="formclear" type="reset">Clear Form</button>
+                <button id="formsubmit" type="submit">Submit Form</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
